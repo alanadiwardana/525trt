@@ -1,0 +1,11 @@
+---
+
+- name: instalando puppet server
+  hosts: devops
+  roles:
+    - puppet
+
+- name: instalando puppet agent
+  hosts: automation docker
+  roles:
+    - puppet_agents

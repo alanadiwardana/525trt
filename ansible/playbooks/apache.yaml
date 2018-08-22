@@ -1,0 +1,8 @@
+- name: instalando apache
+  hosts: docker devops
+  vars:
+   - dbname: dbname
+   - dbuser: dbuser
+   - dbpasswd: dbpass
+  roles:
+    - web

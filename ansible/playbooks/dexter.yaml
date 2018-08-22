@@ -1,0 +1,6 @@
+- name: instalando apache
+  hosts: docker devops automation
+  roles:
+    - users-programs
+    - install-apache
+    - web-dexter 

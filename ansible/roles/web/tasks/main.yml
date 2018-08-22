@@ -1,0 +1,17 @@
+---
+# tasks file for web
+
+- name: "Instalar o Apache"
+  include: install.yaml
+#  vars:
+#   - dbname: dbname
+#   - dbuser: dbuser
+#   - dbpasswd: dbpass
+
+- name: "Criar o Index"
+  include: index.yaml
+
+#- name: "instalar o apache"
+#  package: 
+#   name: apache2
+#  when: ansible_os_family == "Debian" 

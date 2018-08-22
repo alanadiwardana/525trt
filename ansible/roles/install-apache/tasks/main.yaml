@@ -1,0 +1,27 @@
+---
+
+- name: "instalar o apache no debian"
+  package:
+   name: apache2
+  when: ansible_os_family == "Debian"
+
+- name: "instalar o Apache no CENT OS"
+  package:
+   name: httpd
+  when: ansible_os_family == "RedHat"
+
+- name: "iniciar o apache" 
+  systemd:
+   name: httpd
+   state: started
+  when: ansible_os_family == "RedHat"
+
+- name: "configurar firewalld"
+  firewalld:
+   state: enabled
+   port: "{{ item }}"   
+  with_items:
+   - 80/tcp
+   - 443/tcp
+  when: ansible_os_family == "RedHat"
+

@@ -1,0 +1,13 @@
+---
+- name: playbook do Zoroaldo
+  hosts: docker devops
+  vars:
+   - username: sysadmin
+  tasks: 
+   - name: criando usuario sysadmin
+     user: 
+      name: "{{ username }}" 
+      shell: /bin/bash
+      password: '$1$.AOLK2CJ$wZdMTyyTTWj7ck6FtbNWU/'
+      state: present
+

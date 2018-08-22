@@ -1,0 +1,27 @@
+---
+
+- name: pacotes
+  package:
+   name: "{{ item }}"
+   state: present
+  with_items:
+   - apt-transport-https
+   - ca-certificates
+   - curl
+   - software-properties-common 
+
+- name: add or remove an apt_key
+  apt_key:
+   url:  https://download.docker.com/linux/ubuntu/gpg
+
+- name: download pacotes
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release  }} stable"
+    state: present
+
+- name: instalar o docker
+  apt:
+    name: docker-ce
+    update_cache: yes
+    state: present
+

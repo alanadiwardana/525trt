@@ -1,0 +1,21 @@
+<style>
+@keyframes blinker {
+  50% {
+   opacity: 0;
+  }
+}
+</style>
+
+
+<div style="animation: blinker 1s linear infinite; color:red">
+nome da maquina: {{ ansible_hostname  }}  <br>
+ip da maquina: {{ ansible_all_ipv4_addresses[0] }}  <br>
+distro da maquina: {{ ansible_os_family }} <br>
+</div>
+
+<marquee>
+<img width="800px" height="600px" src="https://previews.123rf.com/images/campincool/campincool1708/campincool170800010/83945447-under-construction-sign-isolated-icon-yellow-color-triangular-shape-sign.jpg" />
+
+</marquee>
+
+

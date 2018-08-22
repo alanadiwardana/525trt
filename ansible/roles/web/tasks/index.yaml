@@ -1,0 +1,8 @@
+- name: "Criar o index.html"
+  shell: echo ola mundo > /var/www/html/index.html
+
+- name: "copiando o bendito"
+  template: 
+   src: templates/wp-config
+   dest: /var/www/html/wp-config 
+   

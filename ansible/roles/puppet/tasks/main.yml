@@ -1,0 +1,21 @@
+---
+
+#- name: download pacotes
+#  get_url:
+#    url:  https://apt.puppetlabs.com/puppet5-release-xenial.deb
+#    dest: /tmp
+
+#- name: instalar o repo
+#  shell: dpkg -i /tmp/puppet5-release-wheezy.deb
+
+- name: download pacotes
+  apt:
+    deb:  https://apt.puppetlabs.com/puppet5-release-xenial.deb
+    state: present
+
+
+- name: instalar o puppet
+  apt:
+    name: puppetserver
+    update_cache: yes 
+    state: present

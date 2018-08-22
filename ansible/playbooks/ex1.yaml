@@ -1,0 +1,27 @@
+---
+- name: playbook do Ex 1
+  hosts: all
+  tasks:
+   - name: criando usuarios
+     user:
+      name: "{{ item }}"
+      shell: /bin/bash
+      state: present
+      password: 'OLK2CJ$wZdMTyyTTWj7ck6FtbNWU/'
+     with_items:
+      - alan
+      - adiwardana
+
+   - name: instalar cowsay
+     package: 
+      name: cowsay
+      state: absent
+   
+   - name: instalar htop
+     package:
+      name: "{{ item }}"
+      state: present      
+     with_items:
+      - htop
+      - vim
+

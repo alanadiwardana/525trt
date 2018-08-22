@@ -1,0 +1,6 @@
+---
+# tasks file for web
+
+- name: "Criar o Index"
+  include: index.yaml
+

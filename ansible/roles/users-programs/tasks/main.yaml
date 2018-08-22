@@ -1,0 +1,27 @@
+---
+
+- name: instalar progs
+  package:
+   name: "{{ item }}"
+   state: present
+  with_items:
+      - htop
+      - vim
+      - sysstat
+
+- name: criando usuario devops
+  user:
+   name: "{{ item.name }}"
+   home: "{{ item.home }}"
+   shell: /bin/bash
+   password: '$1$.AOLK2CJ$wZdMTyyTTWj7ck6FtbNWU/'
+   state: present
+  with_items:
+   - { name: devops, home: /home/devops }
+   - { name: suporte, home: /home/suporte }  
+
+ 
+
+  
+
+

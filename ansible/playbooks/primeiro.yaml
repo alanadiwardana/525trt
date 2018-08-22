@@ -1,0 +1,18 @@
+---
+- name: playbook do Zoroaldo
+  hosts: docker devops
+  tasks: 
+   - name: criando usuario devops
+     user: 
+      name: devpos
+      shell: /bin/bash
+      password: '$1$.AOLK2CJ$wZdMTyyTTWj7ck6FtbNWU/'
+      state: present
+
+   - name: instalado o htop
+     package: 
+      name: htop
+      state: present
+
+   - name: copiando o arquivo para o tmp
+     copy: src=files/devops dest=/tmp/devops
