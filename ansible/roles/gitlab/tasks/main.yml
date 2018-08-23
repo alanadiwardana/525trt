@@ -1,0 +1,23 @@
+---
+
+- name: instalar dependencias
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  with_items: 
+  - curl 
+  - openssh-server 
+  - ca-certificates
+  - postfix
+
+- name: instalar o repo por script
+  shell: "curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash"
+
+- name: instalar o git lab
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+  - gitlab-ce 
+
